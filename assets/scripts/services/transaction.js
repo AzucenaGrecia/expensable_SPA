@@ -20,7 +20,7 @@ export function createTransaction(categoryId, amount, note, date) {
   })
 }
 
-export function showTransaciton(categoryId) {
+export function showTransaciton(categoryId, transactionId) {
   return apiFetch(`${BASE_URL}/categories/${categoryId}/transactions/${transactionId}`, {
     method: 'GET',
     headers: {
@@ -29,6 +29,22 @@ export function showTransaciton(categoryId) {
   })
 }
 
-export function updateTransaction() {
-  return 
+export function updateTransaction(categoryId, transactionId, amount, note, date) {
+  return apiFetch(`${BASE_URL}/categories/${categoryId}/transactions/${transactionId}`, {
+    method: 'PATCH',
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token token=${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({ amount, note, date })
+  })
+}
+
+export function deleteTransaction(categoryId, transactionId) {
+  return apiFetch(`${BASE_URL}/categories/${categoryId}/transactions/${transactionId}`, {
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${sessionStorage.getItem('token')}`
+    }
+  })
 }
