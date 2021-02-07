@@ -21,6 +21,8 @@ h1, h2, h3, h4 {
 }
 
 a {
+  color: var(--color-blue-anchor) ;
+  text-decoration: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

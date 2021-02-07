@@ -18,3 +18,14 @@ export function showUser(userId) {
     }
   })
 }
+
+export function updateUser(email, first_name, last_name, phone) {
+  return apiFetch(`${BASE_URL}/profile`, {
+    method: 'PATCH',
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token token=${sessionStorage.getItem('token')}`
+    },
+    body: JSON.stringify({ email, first_name, last_name, phone })
+  })
+}
