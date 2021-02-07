@@ -1,14 +1,18 @@
-/* .form-input {
-  margin: 0px 10px;
-  padding: 18px 60px;
-} */
+label{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
 
 input{
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  padding: 10px;
+  padding: 8px 16px;
   border: 1px solid var(--color-blue-button);
+  border-radius: 8px;
 }
 
 input::placeholder{
