@@ -2,7 +2,7 @@ import { BASE_URL, apiFetch } from "./api_fetch.js";
 
 export function login(email, password) {
   return apiFetch(`${BASE_URL}/login`, {
-    method: 'GET',
+    method: 'POST',
     headers: {
       "Content-Type": "application/json"
     },
