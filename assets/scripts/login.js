@@ -1,3 +1,4 @@
+import { Main } from './main.js';
 import { login } from './services/session_services.js';
 import { SignUp } from './signup.js';
 import { STORE } from './store.js'
@@ -37,8 +38,10 @@ export function Login(parentElement) {
           try{
             const { email, password } = formButton
             const data = await login(email.value, password.value)
-            STORE.user = data 
-            console.log(STORE.user)
+            STORE.user = data
+            console.log(STORE.user) // hasta aqui esta bien
+            const main = Main(parentElement);
+            main.render();
           } catch(e){
             console.log(e)
           }

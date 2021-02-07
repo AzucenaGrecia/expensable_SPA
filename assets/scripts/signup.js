@@ -1,3 +1,7 @@
+import { Login } from "./login.js";
+import { signUp } from './services/user_services.js';
+import { Main } from './main.js';
+
 export function SignUp(parentElement) {
   return {
     parent: document.querySelector(parentElement),
@@ -5,7 +9,7 @@ export function SignUp(parentElement) {
       const html = `
         <section>
           <h2>Sign Up</h2>
-          <form>
+          <form class="js-form-signup">
             <div>
               <label for="email">Email</label><br />
               <input type="email" id="email" name="email">
@@ -34,9 +38,39 @@ export function SignUp(parentElement) {
         </section>
       `;
       this.parent.innerHTML = html;
+      this.addFormSubmitListener();
+      this.renderLoginView();
     },
-    // renderLoginView() {
-    //   const trigger = 
-    // }
+    addFormSubmitListener() {
+      const form = this.parent.querySelector(".js-form-signup");
+      console.log(form)
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        try {
+          const { email, password, first_name, last_name, phone } = form;
+          const data = await signUp(
+            email.value,
+            password.value,
+            first_name.value,
+            last_name.value,
+            phone.value
+          );
+          STORE.user = data;
+          console.log(STORE.user);
+          const main = Main(parentElement);
+          main.render();
+        } catch (e) {
+          console.log(e);
+        }
+      });
+    },
+    renderLoginView() {
+      const trigger = this.parent.querySelector(".js-redirect-login");
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const login = Login(parentElement);
+        login.render();
+      });
+    },
   };
 }
