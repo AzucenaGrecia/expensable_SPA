@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap%27');
+:root {
+  --color-blue-button: #3685E2;
+  --color-blue-anchor: #2F80ED;
+  --color-black-tabs: #111111;
+  --color-gray: #767676;
+  --color-hover-tabs: #E5E5E5;
+  --color-trash-icon: #767676;
+  --color-white:#FFFFFF;
+
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+button {
+  width: 84px;
+  height: 40px;
+  background: var(--color-blue-button);
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-white)
+}
+
+.tab{
+  width: 108px;
+  height: 40px;
+  color: var(--color-black-tab);
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+
+.tab:hover{
+  background-color: var(--color-hover-tabs);
+}
