@@ -7,13 +7,17 @@ label{
 }
 
 input{
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
+  color: var(--color-black-tabs);
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
   padding: 8px 16px;
   border: 1px solid var(--color-blue-button);
   border-radius: 8px;
 }
+
 
 input::placeholder{
   color: var(--color-gray);
