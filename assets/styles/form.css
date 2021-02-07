@@ -1,0 +1,26 @@
+/* .form-input {
+  margin: 0px 10px;
+  padding: 18px 60px;
+} */
+
+input{
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  padding: 10px;
+  border: 1px solid var(--color-blue-button);
+}
+
+input::placeholder{
+  color: var(--color-gray);
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+*:focus{
+  outline: none;
+  color:var(--color-black-tabs);
+}
