@@ -1,0 +1,16 @@
+button {
+  width: 84px;
+  height: 40px;
+  background: var(--color-blue-button);
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-white);
+  border: none;
+}
+
+button:hover{
+  opacity: 90%;
+}
