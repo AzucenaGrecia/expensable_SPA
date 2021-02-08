@@ -1,4 +1,5 @@
-import { Main } from './main.js';
+import { Expenses } from './expenses.js';
+import { listCategories } from './services/category_services.js';
 import { login } from './services/session_services.js';
 import { SignUp } from './signup.js';
 import { STORE } from './store.js'
@@ -39,9 +40,12 @@ export function Login(parentElement) {
             const { email, password } = formButton
             const data = await login(email.value, password.value)
             sessionStorage.setItem('token', data.token)
+            const categories = await listCategories();
             STORE.user = data
-            const main = Main(parentElement);
-            main.render();
+            STORE.expenses = categories.filter(category => category.transaction_type === 'expense');
+            STORE.income = categories.filter(category => category.transaction_type === 'income');
+            const expenses = Expenses(parentElement);
+            expenses.render();
           } catch(e){
             console.log(e)
           }

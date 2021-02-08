@@ -1,4 +1,5 @@
 export const STORE = {
   user: {},
-  categories: []
+  expenses: [],
+  income: []
 }

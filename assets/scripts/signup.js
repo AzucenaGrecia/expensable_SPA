@@ -1,7 +1,7 @@
 import { Login } from "./login.js";
 import { signUp } from './services/user_services.js';
-import { Main } from './main.js';
 import { STORE } from './store.js';
+import { Expenses } from "./expenses.js";
 
 export function SignUp(parentElement) {
   return {
@@ -58,8 +58,8 @@ export function SignUp(parentElement) {
           );
           sessionStorage.setItem('token', data.token)
           STORE.user = data;
-          const main = Main(parentElement);
-          main.render();
+          const expenses = Expenses(parentElement);
+          expenses.render();
         } catch (e) {
           console.log(e);
         }
