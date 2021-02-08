@@ -8,11 +8,18 @@ async function init() {
   const login = Login('.js-content');
   const expenses = Expenses('.js-content');
   if (sessionStorage.getItem('token')) {
-    const categories = await listCategories();
-    STORE.user =  await showUser();
-    STORE.expenses = categories.filter(category => category.transaction_type === 'expense');
-    STORE.income = categories.filter(category => category.transaction_type === 'income');
-    expenses.render();
+    try {
+      const categories = await listCategories();
+      STORE.user =  await showUser();
+      STORE.expenses = categories.filter(category => category.transaction_type === 'expense');
+      STORE.income = categories.filter(category => category.transaction_type === 'income');
+      expenses.render();
+    }catch(e) {
+      if (e.message === 'Access denied') {
+        sessionStorage.removeItem('token');
+        login.render();
+      }
+    }
   } else {
     login.render();
   }
