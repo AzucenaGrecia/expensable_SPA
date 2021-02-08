@@ -3,7 +3,7 @@ export function Main(parentElement){
     parent: document.querySelector(parentElement) ,
     render() {
       const html=`
-      <hi>ESTAS EN MAIN</hi>
+      <h1>ESTAS EN MAIN</h1>
       `;
       this.parent.innerHTML = html;
     }

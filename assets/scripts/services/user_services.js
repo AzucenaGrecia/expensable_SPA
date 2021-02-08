@@ -10,8 +10,8 @@ export function signUp(email, password, first_name, last_name, phone) {
   })
 }
 
-export function showUser(userId) {
-  return apiFetch(`${BASE_URL}/profile/${userId}`, {
+export function showUser() {
+  return apiFetch(`${BASE_URL}/profile`, {
     method: 'GET',
     headers: {
       Authorization: `Token token=${sessionStorage.getItem('token')}`

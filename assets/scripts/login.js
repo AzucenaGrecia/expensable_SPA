@@ -38,8 +38,8 @@ export function Login(parentElement) {
           try{
             const { email, password } = formButton
             const data = await login(email.value, password.value)
+            sessionStorage.setItem('token', data.token)
             STORE.user = data
-            console.log(STORE.user) // hasta aqui esta bien
             const main = Main(parentElement);
             main.render();
           } catch(e){
